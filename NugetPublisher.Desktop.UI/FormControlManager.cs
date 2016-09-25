@@ -10,19 +10,19 @@ namespace NugetPublisher.Desktop.UI
     {
         private readonly HashSet<Control> _controls;
 
-        public FormControlManager(Form form)
+        public FormControlManager(Control parent)
         {
             _controls = new HashSet<Control>();
 
-            foreach (var control in form.Controls)
+            foreach (var control in parent.Controls)
             {
                 _controls.Add((Control)control);
             }
         }
 
-        public async Task ToggleControlsOfType<T>(Func<Task> action, HashSet<T> exclude = null) where T : Control
+        public async Task ToggleControlsOfType<T>(Func<Task> action, HashSet<T> excludedControls = null) where T : Control
         {
-            var controlQuery = new ControlBuilder<T>(_controls.OfType<T>()).ExcludeControls(exclude);
+            var controlQuery = new ControlBuilder<T>(_controls.OfType<T>()).ExcludeControls(excludedControls);
 
             try
             {
@@ -34,7 +34,6 @@ namespace NugetPublisher.Desktop.UI
                 controlQuery.Enable();
             }
         }
-
 
         private class ControlBuilder<T> where T : Control
         {
