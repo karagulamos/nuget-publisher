@@ -44,7 +44,6 @@ namespace NugetPublisher.Desktop.UI
                 _controls = controls;
             }
             
-
             public ControlBuilder<T> ExcludeControls(ICollection<T> controls)
             {
                 if (controls == null || controls.Count == 0)
