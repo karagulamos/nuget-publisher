@@ -1,4 +1,8 @@
-﻿using System;
+// Author: Alexander Karagulamos
+// Date:
+// Comment: Custom forms manager that dynamically disables form controls prior to running a task and re-enables them when done.
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
