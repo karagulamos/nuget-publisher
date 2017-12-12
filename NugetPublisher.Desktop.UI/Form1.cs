@@ -115,7 +115,6 @@ namespace NugetPublisher.Desktop.UI
                             await writer.WriteAsync(sanitizedNuspecMarkup);
                         }
                     }
-
                 });
 
                 if (await RunNuget(@"pack ""{0}.nuspec""{1}", _fileNames))
