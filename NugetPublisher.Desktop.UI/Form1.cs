@@ -118,7 +118,6 @@ namespace NugetPublisher.Desktop.UI
 
                 });
 
-
                 if (await RunNuget(@"pack ""{0}.nuspec""{1}", _fileNames))
                 {
                     StatusLabel.Text = @"Package(s) generated successfully.";
@@ -219,7 +218,6 @@ namespace NugetPublisher.Desktop.UI
 
                 using (var process = new Process())
                 {
-
                     var startInfo = new ProcessStartInfo
                     {
                         UseShellExecute = false,
